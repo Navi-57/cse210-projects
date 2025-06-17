@@ -2,28 +2,22 @@ using System;
 
 class Program
 {
-    static double AddNumbers(double a)
+    static void Main(string[] Args)
     {
-        return a + a;
-    }
+        DateTime currentTime = DateTime.Now;
+        DateTime endTime = currentTime.AddSeconds(10);
 
-    static void DisplayGreeting()
-    {
-        Console.WriteLine("Hello.");
-    }
+        string animationString = "(^_^)(-_-)";
 
-    static void Main(string[] args)
-    {
-        // Console.WriteLine(AddNumbers(3, 4));
-        List<int> myNumbers = new List<int>();
-        myNumbers.Add(7);
-        myNumbers.Add(44);
-        myNumbers.Add(27);
-
-        foreach(int i in myNumbers)
+        while (DateTime.Now < endTime)
         {
-            Console.WriteLine(AddNumbers(i));
+            Thread.Sleep(500);
+            Console.Write(animationString[0..5]);
+            Console.Write("\b\b\b\b\b\b");
+            Thread.Sleep(500);
+            Console.Write(animationString[5..]);
+            Console.Write("\b\b\b\b\b\b\b");
         }
-        DisplayGreeting();
     }
+
 }
